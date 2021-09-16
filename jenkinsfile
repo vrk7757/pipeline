@@ -3,8 +3,8 @@ pipeline
     agent any
     stages
 {
-    stage('scm chekout')
-    {step
+    stage('scm checkout')
+    {steps
     {sh 'echo code is loading'}
     }
 
