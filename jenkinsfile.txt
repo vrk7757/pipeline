@@ -1,0 +1,18 @@
+pipeline
+{
+    agent any
+    stages
+{
+    stage('scm chekout')
+    {step
+    {sh 'echo code is loading'}
+    }
+
+    stage('build the code')
+    {steps
+    {sh 'echo code is building'
+    sh 'echo code is passed'}
+
+    }
+}
+}
