@@ -16,7 +16,7 @@ pipeline
     }
     stage('deploy to dev')
     {steps
-    {sh 'echo deploying artifact to dev'}
+    {sh 'deploying artifact to dev'}
 }
     stage('approve qa')
     {steps
@@ -24,7 +24,15 @@ pipeline
 }
 stage('deploy to qa')
     {steps
-    {sh 'echo deploying artifact to qa'}
+    {sh 'deploying artifact to qa'}
+}
+   stage('approve release manager')
+    {steps
+    {input 'apprvoe code'}
+}
+   stage('approve qa')
+    {steps
+    {input 'apprvoe code'}
 }
 }
 }
