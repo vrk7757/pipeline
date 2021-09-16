@@ -3,8 +3,8 @@ pipeline
     agent any
     stages
 {
-    stage('scm checkout')
-    {steps
+    stage('scm chekout')
+    {step
     {sh 'echo code is loading'}
     }
 
@@ -14,5 +14,17 @@ pipeline
     sh 'echo code is passed'}
 
     }
+    stage('deploy to dev')
+    {steps
+    {sh 'deploying artifact to dev'}
+}
+    stage('approve qa')
+    {steps
+    {input 'approve the code'}
+}
+stage('deploy to qa')
+    {steps
+    {sh 'deploying artifact to qa'}
+}
 }
 }
