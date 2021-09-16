@@ -14,7 +14,7 @@ pipeline
     sh 'echo code is passed'}
 
     }
-    stage('deploy to dev')
+    stage('echo deploy to dev')
     {steps
     {sh 'deploying artifact to dev'}
 }
@@ -24,7 +24,7 @@ pipeline
 }
 stage('deploy to qa')
     {steps
-    {sh 'deploying artifact to qa'}
+    {sh 'echo deploying artifact to qa'}
 }
 }
 }
