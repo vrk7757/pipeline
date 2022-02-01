@@ -1,38 +1,17 @@
 pipeline
 {
-    agent any
-    stages
+agent any
+stages
 {
-    stage('scm checkout')
-    {steps
-    {sh 'echo code is loading'}
-    }
-
-    stage('build the code')
-    {steps
-    {sh 'echo code is building'
-    sh 'echo code is passed'}
-
-    }
-    stage('deploy to dev')
-    {steps
-    {sh 'echo deploying artifact to dev'}
-}
-    stage('approve qa')
-    {steps
-    {input 'approve the code'}
-}
-stage('deploy to qa')
-    {steps
-    {sh 'echo deploying artifact to qa'}
-}
-   stage('approve release manager')
-    {steps
-    {input 'apprvoe code'}
-}
-   stage('approve qa')
-    {steps
-    {input 'apprvoe code'}
-}
+stage('scm checkout')
+{steps{sh 'echo download the code'}}
+stage{'build the code')
+{steps{sh 'echo code is building'}}
+stage('deploy to dev env')
+{steps{sh 'echo deploying to dev'}}
+stage('approve qa deployement')
+{steps{'input 'approve or abort'}}
+stege('deploy to qa')
+{steps{sh 'echo deply to qa'}}
 }
 }
